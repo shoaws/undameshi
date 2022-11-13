@@ -1,0 +1,41 @@
+<header>
+  <div class="text-center">
+    <div>
+      <%= link_to root_path do %>
+        <h1>運試し</h1>
+      <% end %>
+    </div>
+    <div class="row">
+      <% if user_signed_in? %>
+        <div class="col-4">
+          マイページ
+        </div>
+        <div class="col-4">
+          おみくじ
+        </div>
+        <div class="col-4">
+          運試し
+        </div>
+      <% else %>
+        <div class="col-3">
+          <%= link_to about_path do %>
+            Abount
+          <% end %>
+        </div>
+        <div class="col-3">
+          おみくじ
+        </div>
+        <div class="col-3">
+          <%= link_to new_user_registration_path do %>
+            新規登録
+          <% end %>
+        </div>
+        <div class="col-3">
+          <%= link_to new_user_session_path do %>
+            ログイン
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</header>

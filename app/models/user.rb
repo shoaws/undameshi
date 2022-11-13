@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  belongs_to :omikuji
-  belongs_to :choice
+  has_many :omikujis
+  has_many :choices
 end
