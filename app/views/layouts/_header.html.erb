@@ -7,14 +7,21 @@
     </div>
     <div class="row">
       <% if user_signed_in? %>
-        <div class="col-4">
-          マイページ
+        <div class="col-3">
+          <%= link_to user_path(current_user) do %>
+            マイページ
+          <% end %>
         </div>
-        <div class="col-4">
+        <div class="col-3">
           おみくじ
         </div>
-        <div class="col-4">
+        <div class="col-3">
           運試し
+        </div>
+        <div class="col-3">
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            ログアウト
+          <% end %>
         </div>
       <% else %>
         <div class="col-3">
