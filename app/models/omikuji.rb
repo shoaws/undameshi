@@ -1,3 +1,3 @@
 class Omikuji < ApplicationRecord
-  belongs_to :user
+  has_many :user_omikujis, dependent: :destroy
 end
