@@ -7,7 +7,9 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     today_user_omikujis = @user.user_omikujis.created_today
     today_user_omikuji = today_user_omikujis.order(created_at: :desc).first
-    @today_omikuji = Omikuji.find_by(id: today_user_omikuji.omikuji_id)
+    unless today_user_omikuji.nil?
+      @today_omikuji = Omikuji.find_by(id: today_user_omikuji.omikuji_id)
+    end
   end
 
   def edit

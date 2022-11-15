@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :users
     resource :user_omikujis, only: [:create]
     resources :omikujis, only: [:new, :show]
+    resources :choices, only: [:new, :create, :show]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

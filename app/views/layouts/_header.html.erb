@@ -18,7 +18,9 @@
           <% end %>
         </div>
         <div class="col-3">
-          運試し
+          <%= link_to new_choice_path do %>
+            運試し
+          <% end %>
         </div>
         <div class="col-3">
           <%= link_to destroy_user_session_path, method: :delete do %>
