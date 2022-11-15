@@ -18,10 +18,15 @@ Rails.application.routes.draw do
 
   scope module: :public do
     get 'homes/top'
-    get 'homes/about' => 'homes#about',as: 'about'
+    get 'homes/about' => 'homes#about', as: 'about'
     resources :users
     resource :user_omikujis, only: [:create]
     resources :omikujis, only: [:new, :show]
+    get 'choices/easy' => 'choices#easy', as: 'easy'
+    get 'choices/nomal' => 'choices#nomal', as: 'nomal'
+    get 'choices/hard' => 'choices#hard', as: 'hard'
+    post 'choices/choice' => 'choices#choice', as: 'choice'
+    get 'choices/result' => 'choices#result', as: 'result'
     resources :choices, only: [:new, :create, :show]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
