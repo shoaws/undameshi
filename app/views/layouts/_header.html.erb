@@ -1,35 +1,35 @@
-<header>
+<header class="p-2" style="background-color: #ff8c00;">
   <div class="text-center">
     <div>
       <%= link_to root_path do %>
-        <h1>運試し</h1>
+        <%= image_tag '運試し.png', style: "width: 40%;" %>
       <% end %>
     </div>
-    <div class="row">
+    <div class="row mb-2">
       <% if user_signed_in? %>
         <div class="col-3">
-          <%= link_to user_path(current_user) do %>
-            マイページ
+          <%= link_to user_path(current_user), class: "btn btn-light btn-sm" do %>
+            Mypage
           <% end %>
         </div>
         <div class="col-3">
-          <%= link_to new_omikuji_path do %>
+          <%= link_to new_omikuji_path, class: "btn btn-light btn-sm" do %>
             おみくじ
           <% end %>
         </div>
         <div class="col-3">
-          <%= link_to new_choice_path do %>
+          <%= link_to new_choice_path, class: "btn btn-light btn-sm" do %>
             運試し
           <% end %>
         </div>
         <div class="col-3">
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            ログアウト
+          <%= link_to destroy_user_session_path, class: "btn btn-light btn-sm", method: :delete do %>
+            Logout
           <% end %>
         </div>
       <% else %>
         <div class="col-3">
-          <%= link_to about_path do %>
+          <%= link_to about_path, class: "btn btn-light btn-sm" do %>
             Abount
           <% end %>
         </div>
@@ -37,16 +37,21 @@
           おみくじ
         </div>
         <div class="col-3">
-          <%= link_to new_user_registration_path do %>
+          <%= link_to new_user_registration_path, class: "btn btn-light btn-sm" do %>
             新規登録
           <% end %>
         </div>
         <div class="col-3">
-          <%= link_to new_user_session_path do %>
+          <%= link_to new_user_session_path, class: "btn btn-light btn-sm" do %>
             ログイン
           <% end %>
         </div>
       <% end %>
     </div>
+    <% if user_signed_in? %>
+      <div class="text-center mb-1">
+        <span class="p-2 bg-secondary text-white rounded"><%= current_user.name %>さん</span>
+      </div>
+    <% end %>
   </div>
 </header>
