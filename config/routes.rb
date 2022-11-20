@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     post 'choices/choice' => 'choices#choice', as: 'choice'
     get 'choices/result' => 'choices#result', as: 'result'
     resources :choices, only: [:new, :create, :show]
+    resources :bingos, only: [:index]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
