@@ -1,9 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 
-
+.field{
+  margin-bottom: 10px;
+}
 
 @media screen and (maxwidth:450px){
-  #top-link a{
-    font-size: 10pt;
-  }
+  
 }
