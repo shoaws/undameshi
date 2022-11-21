@@ -4,13 +4,23 @@
     margin-bottom: 10px;
 }
 
-.bingo-sheets{
+.bingo-number{
     color: white;
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
     background-color: red;
     border-radius: 50% 50% 0 0;
+}
+
+.bingo-number.check{
+    color: black;
+    background-color: white;
+}
+
+.bingo-number:hover{
+    cursor: pointer;
+    cursor: hand;
 }
 
 .wrapper {

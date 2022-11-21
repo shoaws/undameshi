@@ -1,15 +1,15 @@
 <div class="container">
   <div class="wrapper">
 
-    <div class="row mx-auto mb-3 py-2 d-flex justify-content-center border border-dark" style="width: 400px; height: 320px;">
+    <div id="bingo-sheets" class="row mx-auto mb-3 py-2 d-flex justify-content-center border border-dark" style="width: 400px; height: 320px;">
       <div class="mx-2">
         <% @bingo1.each do |b| %>
-          <div class="border d-flex justify-content-center align-items-center bingo-sheets"><h4><%= b %></h4></div>
+          <div type="checkbox" class="border d-flex justify-content-center align-items-center bingo-number"><h4><%= b %></h4></div>
         <% end %>
       </div>
       <div class="mx-2">
         <% @bingo2.each do |b| %>
-          <div class="border d-flex justify-content-center align-items-center bingo-sheets"><h4><%= b %></h4></div>
+          <div class="border d-flex justify-content-center align-items-center bingo-number"><h4><%= b %></h4></div>
         <% end %>
       </div>
       <div class="mx-2">
@@ -19,7 +19,7 @@
              <h4>B</h4>
             </div>
           <% else %>
-            <div class="border d-flex justify-content-center align-items-center bingo-sheets">
+            <div type="checkbox" class="border d-flex justify-content-center align-items-center bingo-number">
               <h4><%= @bingo3[i] %></h4>
             </div>
           <% end %>
@@ -27,14 +27,18 @@
       </div>
       <div class="mx-2">
         <% @bingo4.each do |b| %>
-          <div class="border d-flex justify-content-center align-items-center bingo-sheets"><h4><%= b %></h4></div>
+          <div type="checkbox" class="border d-flex justify-content-center align-items-center bingo-number"><h4><%= b %></h4></div>
         <% end %>
       </div>
       <div class="mx-2">
         <% @bingo5.each do |b| %>
-          <div class="border d-flex justify-content-center align-items-center bingo-sheets"><h4><%= b %></h4></div>
+          <div type="checkbox" class="border d-flex justify-content-center align-items-center bingo-number"><h4><%= b %></h4></div>
         <% end %>
       </div>
+    </div>
+
+    <div class="m-2 text-center">
+      <%= link_to 'カードをリセット', bingos_path, class: "btn btn-lg btn-info" %>
     </div>
 
     </div>
@@ -52,6 +56,14 @@
 
 
 <script>
+
+$(function () {
+    // 番号をクリックすると、スタイルを変更するクラスをつけ外しできる
+    $('.bingo-number').on('click', function (){
+        $(this).toggleClass('check');
+    });
+});
+
 $(function () {
 
   // 1~75まで、bingoの数字一覧を作成
