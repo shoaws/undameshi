@@ -1,11 +1,6 @@
-<header class="p-2 mb-2" style="background-color: #ff8c00;">
-  <div class="text-center">
-    <div>
-      <%= link_to root_path do %>
-        <%= image_tag '運ノ宮top.png', style: "width: 40%;" %>
-      <% end %>
-    </div>
-    <div class="row mb-2">
+<footer class="px-4" style="height: 100px; background-color: orange;">
+  <div class="text-center py-4 rounded" style="background-color: rgba(255,255,255,0.5);">
+    <div class="row px-0">
       <% if user_signed_in? %>
         <div class="col-3">
           <%= link_to bingos_path, class: "btn btn-light btn-sm" do %>
@@ -48,10 +43,5 @@
         </div>
       <% end %>
     </div>
-    <% if user_signed_in? %>
-      <div class="text-center mb-1">
-        <span class="p-2 bg-secondary text-white rounded"><%= current_user.name %>さん</span>
-      </div>
-    <% end %>
   </div>
-</header>
+</footer>

@@ -1,2 +1,11 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<div class="p-5" style="background-color: orange;">
+  <div id="top-image" class="text-center">
+    <%= image_tag '運ノ宮.png', style: "width: 45%;" %>
+  </div>
+</div>
+
+<script>
+  $(function(){
+    $('#top-image').hide().fadeIn(3000);
+  })
+</script>
