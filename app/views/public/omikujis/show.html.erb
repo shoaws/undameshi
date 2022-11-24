@@ -1,10 +1,24 @@
 <div class="container">
   <div class="text-center">
-    <div>
-      今日の運勢は…
+    <div class="m-5">
+      <h5>あなたの今日の運勢は…</h5>
     </div>
-    <div class="text-center desplay-2">
-      <%= @omikuji.name %>
+    <div class="m-3 text-center display-1">
+      <span class="px-5 py-2 rounded font-weight-bold" style="border: 10px solid gray;"><%= @omikuji.name %></span>
     </div>
+    <div class="m-5">
+      <%= link_to new_omikuji_path, class: "btn btn-outline-info" do %>
+        <もう一度おみくじを引く
+      <% end %>
+    </div>
+  </div>
+  <div class="text-right">
+    会員登録をしてあなたの運をもっと試しましょう！</br>
+    会員登録は
+    <span class="lead">
+      <%= link_to new_user_registration_path do %>
+        こちら>
+      <% end %>
+    </span>
   </div>
 </div>

@@ -1,11 +1,10 @@
 <div class="container">
   <div class="text-center">
-    おみくじを引く<br>
-    ↓
+    <%= image_tag 'おみくじ.png', style: "width: 300px" %>
   </div>
-  <div class="text-center">
-    <%= link_to user_omikujis_path, method: :post, class: "btn btn-outline-warning" do %>
-      おみくじ
+  <div class="mt-5 text-center">
+    <%= link_to user_omikujis_path, class: "btn btn-lg btn-outline-secondary", method: :post do %>
+      おみくじを引く
     <% end %>
   </div>
 </div>

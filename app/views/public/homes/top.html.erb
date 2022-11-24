@@ -1,6 +1,53 @@
-<div class="p-5" style="background-color: orange;">
+<div class="p-5" style="height: 100vh; background-color: orange;">
   <div id="top-image" class="text-center">
     <%= image_tag '運ノ宮.png', style: "width: 45%;" %>
+  </div>
+  <div class="text-center py-4 rounded" style="background-color: rgba(255,255,255,0.5);">
+    <div class="row px-0">
+      <% if user_signed_in? %>
+        <div class="col-3">
+          <%= link_to bingos_path, class: "btn btn-light" do %>
+            Bingo
+          <% end %>
+        </div>
+        <div class="col-3">
+          <%= link_to new_omikuji_path, class: "btn btn-light" do %>
+            おみくじ
+          <% end %>
+        </div>
+        <div class="col-3">
+          <%= link_to new_choice_path, class: "btn btn-light" do %>
+            運試し
+          <% end %>
+        </div>
+        <div class="col-3">
+          <%= link_to destroy_user_session_path, class: "btn btn-light", method: :delete do %>
+            Logout
+          <% end %>
+        </div>
+      <% else %>
+        <div class="col-3">
+          <%= link_to about_path, class: "btn btn-light" do %>
+            Abount
+          <% end %>
+        </div>
+        <div class="col-3">
+          <%= link_to new_omikuji_path, class: "btn btn-light" do %>
+            おみくじ
+          <% end %>
+        </div>
+        <div class="col-3">
+          <%= link_to new_user_registration_path, class: "btn btn-light" do %>
+            新規登録
+          <% end %>
+        </div>
+        <div class="col-3">
+          <%= link_to new_user_session_path, class: "btn btn-light" do %>
+            ログイン
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
