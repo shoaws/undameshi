@@ -9,16 +9,23 @@
         <% if @today_omikuji.nil? %>
           占ってみましょう！
         <% else %>
-          <%= @today_omikuji.name %>
+          <span class="h3">
+            <%= @today_omikuji.name %>
+          </span>
         <% end %>
       </div>
     </div>
-    <div>
+    <table class="table">
       <% @user.omikujis.each do |omikuji| %>
-        <div>
-          <%= omikuji.name %>
-        </div>
+        <tr>
+          <th>
+            <%= omikuji.created_at %>
+          </th>
+          <td>
+            <%= omikuji.name %>
+          </td>
+        </tr>
       <% end %>
-    </div>
+    </table>
   </div>
 </div>
