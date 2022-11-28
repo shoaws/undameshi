@@ -31,6 +31,13 @@
     </div>
   <% end %>
 
-  <%= render "public/shared/links" %>
+  <div class="text-right">
+    会員の方は
+    <span class="lead">
+      <%= link_to new_user_session_path do %>
+        こちら>
+      <% end %>
+    </span>
+  </div>
 
 </div>

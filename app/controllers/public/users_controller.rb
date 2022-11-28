@@ -5,6 +5,7 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_omikujis = @user.omikujis.order(created_at: :desc)
     today_user_omikujis = @user.user_omikujis.created_today
     today_user_omikuji = today_user_omikujis.order(created_at: :desc).first
     unless today_user_omikuji.nil?

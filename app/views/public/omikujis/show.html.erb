@@ -8,7 +8,7 @@
       <span class="px-5 py-2 rounded font-weight-bold" style="border: 10px solid gray;"><%= @omikuji.name %></span>
     </div>
     <div class="text-danger">
-      <%= flash[:notice] %>
+      <%= flash[:alert] %>
     </div>
     <% unless user_signed_in? %>
       <div class="m-5">
@@ -19,7 +19,7 @@
     <% end %>
   </div>
 
-  <div class="text-right">
+  <div class="mt-2 text-right">
     会員登録をしてあなたの運をもっと試しましょう！</br>
     会員登録は
     <span class="lead">
