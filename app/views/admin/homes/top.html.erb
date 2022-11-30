@@ -1,2 +1,24 @@
-<h1>Admin::Homes#top</h1>
-<p>Find me in app/views/admin/homes/top.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h4 class="m-3">おみくじ一覧</h4>
+      <table class="table">
+        <% @omikujis.each do |omikuji| %>
+          <tr>
+            <td>
+              <%= omikuji.name %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="col-6">
+      <h5>おみくじ結果作成フォーム</h5>
+      <%= form_with model: @omikuji, url: admin_omikujis_path do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
