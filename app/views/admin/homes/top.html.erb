@@ -8,12 +8,26 @@
             <td>
               <%= omikuji.name %>
             </td>
+            <td>
+              <%= link_to '削除', admin_omikuji_path(omikuji), method: :delete, class: "btn btn-sm btn-danger" %>
+            </td>
           </tr>
         <% end %>
       </table>
     </div>
     <div class="col-6">
-      <h5>おみくじ結果作成フォーム</h5>
+      <h5>
+        おみくじ結果</br>
+        作成フォーム
+      </h5>
+      <% if @omikuji.errors.any? %>
+        <%= @omikuji.errors.count %>件のエラーが発生しました
+        <ul>
+        <% @omikuji.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      <% end %>
       <%= form_with model: @omikuji, url: admin_omikujis_path do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %>

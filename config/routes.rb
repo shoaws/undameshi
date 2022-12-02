@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'homes#top'
     get 'homes/top'
-    resources :omikujis, except: [:new]
+    resources :omikujis, except: [:new, :index]
   end
 
   scope module: :public do
