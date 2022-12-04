@@ -1,10 +1,15 @@
 <div class="container">
   <div>
-    <div class="row d-flex">
-      <div class="col-3">
-        <%= @user.name %>さん
+    <div class="row mb-3">
+      <div class="col-4 text-center">
+        <div class="mb-3 font-weight-bold">
+          <span class="p-2 border rounded"><%= @user.name %>さん</span>
+        </div>
+        <div>
+          <%= link_to '編集', edit_user_path, class: "btn btn-secondary" %>
+        </div>
       </div>
-      <div class="col-9">
+      <div class="col-8">
         今日の運勢:
         <% if @today_omikuji.nil? %>
           占ってみましょう！
@@ -13,19 +18,20 @@
             <%= @today_omikuji.name %>
           </span>
         <% end %>
+
+        <table class="table">
+          <% @user_omikujis.each do |omikuji| %>
+            <tr>
+              <th>
+                <%= omikuji.created_at %>
+              </th>
+              <td>
+                <%= omikuji.name %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
       </div>
     </div>
-    <table class="table">
-      <% @user_omikujis.each do |omikuji| %>
-        <tr>
-          <th>
-            <%= omikuji.created_at %>
-          </th>
-          <td>
-            <%= omikuji.name %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
   </div>
 </div>
