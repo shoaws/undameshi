@@ -21,7 +21,10 @@ Rails.application.routes.draw do
   scope module: :public do
     get 'homes/top'
     get 'homes/about' => 'homes#about', as: 'about'
-    resources :users
+    resources :users do
+      get 'password_edit' => 'users#password_edit'
+      patch 'password_update' => 'users#password_update'
+    end
     resource :user_omikujis, only: [:create]
     resources :omikujis, only: [:new, :show]
     get 'choices/easy' => 'choices#easy', as: 'easy'

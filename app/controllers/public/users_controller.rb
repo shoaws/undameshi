@@ -30,6 +30,24 @@ class Public::UsersController < ApplicationController
     end
   end
 
+  def password_edit
+    @user = current_user
+  end
+
+  def password_update
+    @user = current_user
+    if params[:now_password] == @user.password
+      if @user.update(user_params)
+        bypass_sign_in(@user)
+        redirect_to user_path(@user)
+      else
+        render :password_edit
+      end
+    else
+      render :password_edit
+    end
+  end
+
   private
 
   def user_params
