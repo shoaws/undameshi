@@ -36,13 +36,9 @@ class Public::UsersController < ApplicationController
 
   def password_update
     @user = current_user
-    if params[:now_password] == @user.password
-      if @user.update(user_params)
-        bypass_sign_in(@user)
-        redirect_to user_path(@user)
-      else
-        render :password_edit
-      end
+    if @user.update(user_params)
+      bypass_sign_in(@user)
+      redirect_to user_path(@user)
     else
       render :password_edit
     end

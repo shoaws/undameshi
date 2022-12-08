@@ -17,9 +17,15 @@
         <% if @today_omikuji.nil? %>
           占ってみましょう！
         <% else %>
-          <span class="h3">
-            <%= @today_omikuji.name %>
-          </span>
+          <% if @today_omikuji.name == "大吉" %>
+            <span class="h3 text-danger font-weight-bold">
+              <%= @today_omikuji.name %>
+            </span>
+          <% else %>
+            <span class="h3 font-weight-bold">
+              <%= @today_omikuji.name %>
+            </span>
+          <% end %>
         <% end %>
 
         <table class="table">

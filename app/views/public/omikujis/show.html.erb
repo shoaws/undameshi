@@ -4,9 +4,15 @@
     <div class="m-5">
       <h5>あなたの今日の運勢は…</h5>
     </div>
-    <div class="m-3 text-center display-2">
-      <span class="px-5 py-2 rounded font-weight-bold" style="border: 10px solid gray;"><%= @omikuji.name %></span>
-    </div>
+    <% if @omikuji.name == "大吉" %>
+      <div class="m-3 text-center display-2">
+        <span class="px-5 py-2 rounded font-weight-bold" style="border: 10px solid red;"><%= @omikuji.name %></span>
+      </div>
+    <% else %>
+      <div class="m-3 text-center display-2">
+        <span class="px-5 py-2 rounded font-weight-bold" style="border: 10px solid gray;"><%= @omikuji.name %></span>
+      </div>
+    <% end %>
     <div class="text-danger">
       <%= flash[:alert] %>
     </div>
@@ -19,14 +25,16 @@
     <% end %>
   </div>
 
-  <div class="mt-2 text-right">
-    会員登録をしてあなたの運をもっと試しましょう！</br>
-    会員登録は
-    <span class="lead">
-      <%= link_to new_user_registration_path do %>
-        こちら>
-      <% end %>
-    </span>
-  </div>
+  <% unless user_signed_in? %>
+    <div class="mt-2 text-right">
+      会員登録をしてあなたの運をもっと試しましょう！</br>
+      会員登録は
+      <span class="lead">
+        <%= link_to new_user_registration_path do %>
+          こちら>
+        <% end %>
+      </span>
+    </div>
+  <% end %>
 
 </div>
