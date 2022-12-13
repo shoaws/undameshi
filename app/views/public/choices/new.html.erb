@@ -1,22 +1,38 @@
 <div class="container">
-  <div class="text-center">
-    難易度を選択してください
+  <div class="my-5 text-center">
+    <h4>難易度を選択してください</h4>
+    <p class="text-secondary">※複数あるボタンから正解のものを選んでください</p>
   </div>
   <div class="row text-center">
     <div class="col-4">
-      <%= link_to easy_path, class: "btn btn-success" do %>
-        Easy
-      <% end %>
+      <div>
+        <%= link_to easy_path, class: "btn btn-success btn-lg" do %>
+          Easy
+        <% end %>
+      </div>
+      <div class="mt-3 text-success">
+        ボタンの数：二つ
+      </div>
     </div>
     <div class="col-4">
-      <%= link_to nomal_path, class: "btn btn-warning" do %>
-        Nomal
-      <% end %>
+      <div>
+        <%= link_to nomal_path, class: "btn btn-warning btn-lg" do %>
+          Nomal
+        <% end %>
+      </div>
+      <div class="mt-3 text-warning">
+        ボタンの数：三つ
+      </div>
     </div>
     <div class="col-4">
-      <%= link_to hard_path, class: "btn btn-danger" do %>
-        Hard
-      <% end %>
+      <div>
+        <%= link_to hard_path, class: "btn btn-danger btn-lg" do %>
+          Hard
+        <% end %>
+      </div>
+      <div class="mt-3 text-danger">
+        ボタンの数：五つ
+      </div>
     </div>
   </div>
 </div>
