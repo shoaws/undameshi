@@ -1,5 +1,12 @@
 <div class="container">
+  <div class="m-5 text-center">
+    <% if @result == "正解！" %>
+      <span class="display-2 font-weight-bold text-danger"><%= @result %></span>
+    <% else %>
+      <span class="display-2 font-weight-bold"><%= @result %></span>
+    <% end %>
+  </div>
   <div class="text-center">
-    <%= @result %>
+    <%= link_to 'もう一回！', new_choice_path, class: "btn btn-secondary" %>
   </div>
 </div>

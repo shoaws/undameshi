@@ -21,7 +21,7 @@ class Public::ChoicesController < ApplicationController
   def choice
     ans = [1,2].sample
     if ans == 1
-      @result = '正解です！'
+      @result = '正解！'
     else
       @result = '残念！'
     end
