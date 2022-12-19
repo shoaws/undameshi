@@ -19,17 +19,17 @@ class Public::ChoicesController < ApplicationController
   end
 
   def choice
-    ans = [1,2].sample
-    if ans == 1
-      @result = '正解！'
+    if request.referer&.include?("easy")
+      @ans = [1,2].sample
+    elsif request.referer&.include?("nomal")
+      @ans = [1,2,3].sample
     else
-      @result = '残念！'
+      @ans = [1,2,3,4,5].sample
     end
     render :result
-    # redirect_to result_path
   end
 
   def result
-
+    
   end
 end

@@ -1,9 +1,9 @@
 <div class="container">
   <div class="m-5 text-center">
-    <% if @result == "正解！" %>
-      <span class="display-2 font-weight-bold text-danger"><%= @result %></span>
+    <% if @ans == 1 %>
+      <span class="display-2 font-weight-bold text-danger">正解！</span>
     <% else %>
-      <span class="display-2 font-weight-bold"><%= @result %></span>
+      <span class="display-2 font-weight-bold">残念！</span>
     <% end %>
   </div>
   <div class="text-center">
