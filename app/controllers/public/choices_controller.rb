@@ -18,6 +18,10 @@ class Public::ChoicesController < ApplicationController
 
   end
 
+  def inferno
+
+  end
+
   def choice
     if request.referer&.include?("easy")
       @ans = [1,2].sample
@@ -30,6 +34,6 @@ class Public::ChoicesController < ApplicationController
   end
 
   def result
-    
+
   end
 end

@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     get 'choices/easy' => 'choices#easy', as: 'easy'
     get 'choices/nomal' => 'choices#nomal', as: 'nomal'
     get 'choices/hard' => 'choices#hard', as: 'hard'
+    get 'choices/inferno' => 'choices#inferno', as: 'inferno'
     post 'choices/choice' => 'choices#choice', as: 'choice'
     get 'choices/result' => 'choices#result', as: 'result'
     resources :choices, only: [:new, :create, :show]
